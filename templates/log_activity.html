@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/static/css/stylelanding.css">
+    <link rel="stylesheet" href="/static/css/responsive.css">
+</head>
+
+<body>
+   <div class="header">
+      <div class="navbar">
+          <div class="logo">
+              <a href="#">Stunting APP</a>
+          </div>
+          <ul class="menu-items">
+              <li><a href="{{ url_for('Home') }}">Home</a></li>
+              <!-- <li class="explore-btn"><a href="#">Tanya Boni</a></li> -->
+          </ul>
+      </div>
+  </div>
+
+	<img class="wave" src="#">
+	<div class="container">
+		<div class="img">
+			<img src="/static/img/diagnosa.png">
+		</div>
+		<div class="login-content">
+			<form action="{{ url_for('predict')}}" method="post">
+				<img src="/static/img/avatar.svg">
+				<h2 class="title">Log History</h2>
+            <hr/>
+            {%- for message in get_flashed_messages() %}
+               {{ message }}
+            {%- endfor %}
+            
+            <table style="height: max-content; width: max-content;">
+               <thead>
+                  <tr>
+                     <th>Tanggal</th>
+                     <th>Aktivitas</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  {% for aktiv in logaktiv %}
+                     <tr>
+                        <td>{{ aktiv.tanggal }}</td>
+                        <td>{{ aktiv.aktivitas }}</td>
+                     </tr>
+                  {% endfor %}
+               </tbody>
+            </table>
+               <br>
+               <a href="{{ url_for('diagnosa') }}">Kembali</a>
+              <br>
+              <br>
+              <br>
+              <br>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+      <p>Created By Stunting APP | &copy; 2022 All rights reserved.</span>
+  </footer>
+
+    <script type="text/javascript" src="/static/js/main.js"></script>
+</body>
+</html>

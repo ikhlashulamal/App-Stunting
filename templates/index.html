@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- custom stylesheet -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/stylelanding.css">
+    <link rel="stylesheet" href="/static/css/responsive.css">
+    <!-- <link rel="stylesheet" href="/static/css/stylecb.css"> -->
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+
+    <title>Stunting App</title>
+    <link rel="icon" type="image/x-icon" href="/static/img/dokter.png" />
+</head>
+
+<body id="top">
+    <!-- header area start -->
+    <div class="header">
+        <div class="navbar">
+            <div class="logo">
+                <a href="#">Stunting APP</a>
+            </div>
+            <ul class="menu-items">
+                <li><a href="#top">Home</a></li>
+                <li><a href="#diagnosis">Diagnosis</a></li>
+                <li><a href="#news">Berita</a></li>
+                <li><a href="#support">VA</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <!-- <li class="explore-btn" data-toggle="modal" data-target="#exampleModal"><a
+                        href="#exampleModal">Tanya Boni</a></li> -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <!-- <link rel="stylesheet" href="/static/css/stylecb.css"> -->
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Chatbot</h5>
+                </div>
+                <div class="modal-body">
+                    <section class="msger">
+                        <main class="msger-chat">
+                          <div class="msg left-msg">
+                            <div class="msg-img" style="background-image: url(https://cdn-icons-png.flaticon.com/512/6540/6540769.png)"></div>
+                    
+                            <div class="msg-bubble">
+                              <div class="msg-info">
+                                <div class="msg-info-name">Boni</div>
+                                <div class="msg-info-time"></div>
+                              </div>
+                    
+                              <div class="msg-text">
+                                Hi, Selamat Datang! Ada yang bisa kami bantu?. 😄
+                              </div>
+                            </div>
+                          </div>
+                    
+                        </main>
+                    
+                        <form class="msger-inputarea">
+                          <input type="text" class="msger-input" id="textInput" placeholder="Ketikan sesuatu...">
+                          <button type="submit" class="msger-send-btn">Kirim</button>
+                        </form>
+                      </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-toggler">
+        <div class="toggle-bar"></div>
+    </div>
+    <!-- header area end -->
+
+
+
+    <!-- home area start -->
+    <div class="container" id="home">
+        <div class="text-side" data-aos="fade-right">
+            <div class="title">
+                <h1>Selamat Datang di Website Kami!</h1>
+            </div>
+            <div class="details">
+                <p align="justify">Stunting App adalah sebuah Website yang dapat digunakan untuk membantu masyarakat lebih mengenal
+                    stunting dan
+                    bagaimana cara mengatasinya, kami juga sudah tersedia dimobile!.</p>
+            </div>
+            <div class="buttons">
+                <a href="#">Android</a>
+                <a href="#">Ios</a>
+            </div>
+        </div>
+        <div class="image-side" data-aos="fade-left">
+            <img src="/static/img/dokter.png" alt="home-img">
+        </div>
+    </div>
+    <!-- home area end -->
+
+
+
+    <!-- service area start -->
+    <div class="container" id="diagnosis">
+        <div class="image-side" data-aos="fade-right">
+            <img src="/static/img/diagnosa.png" alt="services">
+        </div>
+        <div class="text-side" data-aos="fade-right" data-aos-delay="600">
+            <div class="title">
+                <h1>Diagnosis</h1>
+            </div>
+            <div class="details">
+                <p align="justify">Kami menyediakan pelayanan untuk melakukan prediksi potensi stunting berdasarkan usia (berdasarkan
+                    bulan)
+                    dan tinggi badan anak.</p>
+            </div>
+            <div class="buttons">
+                <a href="{{ url_for('diagnosa') }}">Diagnosis Stunting</a>
+            </div>
+            <div class="buttons">
+                <a href="{{ url_for('upload_file') }}">Cek Gizi</a>
+            </div>
+        </div>
+    </div>
+    <!-- service area end -->
+
+
+
+    <!-- pricing area start -->
+    <div class="container" id="news">
+        <div class="text-side" data-aos="fade-left" data-aos-delay="600">
+            <div class="title">
+                <h1>Berita</h1>
+            </div>
+            <div class="details">
+                <p align="justify">Hai! Penting bagi kita untuk selalu meninjau kabar berita terkini dalam dunia kesehatan</p>
+            </div>
+            <div class="buttons">
+                <a
+                    href="https://www.emc.id/id/care-plus/mengenal-gejala-stunting-dan-cara-mencegahnya?gclid=Cj0KCQiAtbqdBhDvARIsAGYnXBM1eF63GcFQ2LYnNr2bVNi1vdGaX5IodmuqJR2CPXQcoatYo5m2yoIaAtveEALw_wcB">Berita</a>
+            </div>
+        </div>
+        <div class="image-side" data-aos="fade-left">
+            <img src="/static/img/berita.png" alt="home-img">
+        </div>
+    </div>
+    <!-- pricing area end -->
+
+
+
+    <!-- support area start -->
+    <div class="container" id="support">
+        <div class="image-side" data-aos="zoom-in">
+            <img src="/static/img/live-chat.png" alt="services">
+        </div>
+        <div class="text-side" data-aos="zoom-in">
+            <div class="title">
+                <h1>Hai! Perkenalkan aku Boni</h1>
+            </div>
+            <div class="details">
+                <p align="justify">Disini kami menyediakan pelayanan untuk menambah wawasan kamu tentang stunting loh!
+                    Melalui fitur chatbot ini, ayok! berbicaralah dengan Boni.</p>
+            </div>
+            <div class="buttons">
+                <a href="{{ url_for('halchatbot') }}">Tanya Boni</a>
+            </div>
+        </div>
+    </div>
+    <!-- support area end -->
+
+
+
+    <!-- contact area start -->
+    <div class="container" id="contact">
+        <div class="text-side" data-aos="fade-right">
+            <div class="title">
+                <h1>SMATECH TEAM</h1>
+            </div>
+            <div class="details">
+                <p align="justify">SMART TECHNOLOGY atau Team Smatech beranggotakan Irfan Triadi Saputra, Koandres, Laeli Nurafiah dan
+                    Mokhamad Akbar Wijaya</p>
+            </div>
+            <div class="buttons">
+                <a href="{{ url_for('tentang') }}">Tentang Kami</a>
+            </div>
+        </div>
+        <div class="image-side" data-aos="fade-left">
+            <img src="/static/img/taem.png" alt="home-img">
+        </div>
+    </div>
+    <!-- contact area end -->
+
+
+    <!-- scroll top button -->
+    <a href="#top" class="scroll-top-btn">
+        <!-- <span class="fa fa-chevron-up" style="color:white"></span> -->
+        <img src="/static/img/top.png" alt="home-img">
+    </a>
+
+    <!-- footer -->
+    <footer>
+        <p>Created By Stunting APP | &copy;
+            2022 All rights reserved.</span>
+    </footer>
+
+    <!-- aos cdn link -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- custom js -->
+    <script src="/static/js/script.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
+    
+    <!-- partial -->
+    <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+  <script>
+
+    const msgerForm = get(".msger-inputarea");
+    const msgerInput = get(".msger-input");
+    const msgerChat = get(".msger-chat");
+
+
+    // Icons made by Freepik from www.flaticon.com
+    const BOT_IMG = "https://cdn-icons-png.flaticon.com/512/6540/6540769.png";
+    const PERSON_IMG = "https://images-platform.99static.com/Tzb1bkeeHLl-rpIg8DFPKs0x48U=/0x0:1024x1024/500x500/top/smart/99designs-contests-attachments/87/87815/attachment_87815520";
+    const BOT_NAME = "VA Stunting";
+    const PERSON_NAME = "You";
+
+    msgerForm.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const msgText = msgerInput.value;
+      if (!msgText) return;
+
+      appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
+      msgerInput.value = "";
+      botResponse(msgText);
+    });
+
+    function appendMessage(name, img, side, text) {
+      //   Simple solution for small apps
+      const msgHTML = `
+<div class="msg ${side}-msg">
+  <div class="msg-img" style="background-image: url(${img})"></div>
+
+  <div class="msg-bubble">
+    <div class="msg-info">
+      <div class="msg-info-name">${name}</div>
+      <div class="msg-info-time">${formatDate(new Date())}</div>
+    </div>
+
+    <div class="msg-text" style="text-align: justify">${text}</div>
+  </div>
+</div>
+`;
+
+      msgerChat.insertAdjacentHTML("beforeend", msgHTML);
+      msgerChat.scrollTop += 500;
+    }
+
+    function botResponse(rawText) {
+
+      // Bot Response
+      $.get("/get", { msg: rawText }).done(function (data) {
+        console.log(rawText);
+        console.log(data);
+        const msgText = data;
+        appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+      });
+
+    }
+
+
+    // Utils
+    function get(selector, root = document) {
+      return root.querySelector(selector);
+    }
+
+    function formatDate(date) {
+      const h = "0" + date.getHours();
+      const m = "0" + date.getMinutes();
+
+      return `${h.slice(-2)}:${m.slice(-2)}`;
+    }
+
+
+
+  </script>
+</body>
+</html>

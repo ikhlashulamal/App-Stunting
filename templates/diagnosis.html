@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Chatbot | Stunting App</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/static/css/stylelanding.css">
+    <link rel="stylesheet" href="/static/css/responsive.css">
+</head>
+
+<body id="top">
+	<div class="header">
+        <div class="navbar">
+            <div class="logo">
+                <a href="#">Stunting APP</a>
+            </div>
+            <ul class="menu-items">
+                <li><a href="{{ url_for('Home') }}">Home</a></li>
+                <!-- <li class="explore-btn"><a href="#">Login</a></li> -->
+            </ul>
+        </div>
+    </div>
+
+	<img class="wave" src="#">
+	<div class="container">
+		<div class="img">
+			<img src="/static/img/diagnosa.png">
+		</div>
+		<div class="login-content">
+			<form action="{{ url_for('predict')}}" method="post">
+				<img src="/static/img/avatar.svg">
+				<h2 class="title">Data Anak</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<!-- <i class="fas fa-user"></i> -->
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Usia</h5>
+           		   		<input type="text" class="input" name="Umur (bulan)" required="required">
+           		   </div>
+           		</div>
+           		<div class="input-div one">
+           		   <div class="i"> 
+           		    	<!-- <i class="fas fa-lock"></i> -->
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Tinggi Badan</h5>
+           		    	<input type="text" class="input" name="Tinggi" required="required">
+            	   </div>
+            	</div>
+            	<input type="submit" class="btn" value="Prediksi">
+              <br>
+              {{ prediction_text }}
+              <br>
+              <br>
+              <br>
+              <a href = "{{ url_for('logactivity') }}">Log History</a>
+            </form>
+        </div>
+    </div>
+
+	<footer>
+        <p>Created By Stunting APP | &copy;
+            2022 All rights reserved.</span>
+    </footer>
+
+    <script type="text/javascript" src="/static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+GET http://127.0.0.1:5000/logmobile
+###
+
+GET  http://127.0.0.1:5000/diagnosa/predict
+Content-Type: application/json
+
+{
+    "umur": "30",
+    "tinggi": "90"
+}
