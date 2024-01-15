@@ -1,5 +1,5 @@
 import nltk
-# nltk.download('popular')
+nltk.download('popular')
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 import pickle
@@ -13,6 +13,7 @@ intents = json.loads(open('data.json').read())
 words = pickle.load(open('texts.pkl','rb'))
 classes = pickle.load(open('labels.pkl','rb'))
 
+#Mengonversi kata-kata ke bentuk dasarnya, dan mengembalikan array kata-kata tersebut.
 def clean_up_sentence(sentence):
     # tokenize the pattern - split words into array
     sentence_words = nltk.word_tokenize(sentence)
@@ -36,6 +37,7 @@ def bow(sentence, words, show_details=True):
                     print ("found in bag: %s" % w)
     return(np.array(bag))
 
+#Menggunakan fungsi predict_class untuk mendapatkan intent dari input pengguna.
 def predict_class(sentence, model):
     # filter out predictions below a threshold
     p = bow(sentence, words,show_details=False)
@@ -49,6 +51,7 @@ def predict_class(sentence, model):
         return_list.append({"intent": classes[r[0]], "probability": str(r[1])})
     return return_list
 
+#Menggunakan fungsi getResponse untuk mendapatkan respons yang sesuai dengan intent yang diprediksi.
 def getResponse(ints, intents_json):
     tag = ints[0]['intent']
     list_of_intents = intents_json['intents']

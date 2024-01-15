@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentimen Analysis Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Sentimen Analysis Dashboard</h1>
+    
+    <div>
+        <p>Jumlah Data:</p>
+        <ul>
+            <li>Positif (1): {{ jumlah_data[0] }}</li>
+            <li>Negatif (0): {{ jumlah_data[1] }}</li>
+            <li>Netral (-1): {{ jumlah_data[2] }}</li>
+        </ul>
+    </div>
+
+    <!-- Canvas element for the chart -->
+    <canvas id="sentimenChart" width="400" height="200"></canvas>
+
+    <form method="post" action="/sentimen">
+        <button type="submit">Lakukan Analisis Sentimen</button>
+    </form>
+
+    <script>
+        // Data untuk grafik
+        var ctx = document.getElementById('sentimenChart').getContext('2d');
+        var data = {
+            labels: ['Positif (1)', 'Negatif (0)', 'Netral (-1)'],
+            datasets: [{
+                label: 'Jumlah Data',
+                data: {{ jumlah_data | tojson }},
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(128, 128, 128, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(128, 128, 128, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        // Opsi untuk grafik
+        var options = {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        };
+
+        // Membuat grafik dengan Chart.js
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+    </script>
+</body>
+</html>

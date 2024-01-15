@@ -24,7 +24,7 @@
     <!-- <link rel="stylesheet" href="/static/css/stylecb.css"> -->
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
 
-    <title>Stunting App</title>
+    <title>House Stunting APP</title>
     <link rel="icon" type="image/x-icon" href="/static/img/dokter.png" />
 </head>
 
@@ -33,13 +33,13 @@
     <div class="header">
         <div class="navbar">
             <div class="logo">
-                <a href="#">Stunting APP</a>
+                <a href="#">House Stunting APP</a>
             </div>
             <ul class="menu-items">
                 <li><a href="#top">Home</a></li>
                 <li><a href="#diagnosis">Diagnosis</a></li>
                 <li><a href="#news">Berita</a></li>
-                <li><a href="#support">VA</a></li>
+                <li><a href="#support">Chatbot</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <!-- <li class="explore-btn" data-toggle="modal" data-target="#exampleModal"><a
                         href="#exampleModal">Tanya Boni</a></li> -->
@@ -100,13 +100,13 @@
                 <h1>Selamat Datang di Website Kami!</h1>
             </div>
             <div class="details">
-                <p align="justify">Stunting App adalah sebuah Website yang dapat digunakan untuk membantu masyarakat lebih mengenal
+                <p align="justify">House Stunting APP adalah sebuah Website yang dapat digunakan untuk membantu masyarakat lebih mengenal
                     stunting dan
                     bagaimana cara mengatasinya, kami juga sudah tersedia dimobile!.</p>
             </div>
             <div class="buttons">
                 <a href="#">Android</a>
-                <a href="#">Ios</a>
+             
             </div>
         </div>
         <div class="image-side" data-aos="fade-left">
@@ -135,7 +135,11 @@
                 <a href="{{ url_for('diagnosa') }}">Diagnosis Stunting</a>
             </div>
             <div class="buttons">
-                <a href="{{ url_for('upload_file') }}">Cek Gizi</a>
+                <a href="{{ url_for('video_feed') }}">Cek Stunting</a>
+            </div>
+        </div>
+            <!-- <div class="buttons">
+                <a href="{{ url_for('upload_file') }}">Cek Gizi</a> -->
             </div>
         </div>
     </div>
@@ -154,7 +158,7 @@
             </div>
             <div class="buttons">
                 <a
-                    href="https://www.emc.id/id/care-plus/mengenal-gejala-stunting-dan-cara-mencegahnya?gclid=Cj0KCQiAtbqdBhDvARIsAGYnXBM1eF63GcFQ2LYnNr2bVNi1vdGaX5IodmuqJR2CPXQcoatYo5m2yoIaAtveEALw_wcB">Berita</a>
+                    href="https://www.alodokter.com/stunting">Berita</a>
             </div>
         </div>
         <div class="image-side" data-aos="fade-left">
@@ -172,14 +176,14 @@
         </div>
         <div class="text-side" data-aos="zoom-in">
             <div class="title">
-                <h1>Hai! Perkenalkan aku Boni</h1>
+                <h1>Hai! Perkenalkan aku Brody</h1>
             </div>
             <div class="details">
-                <p align="justify">Disini kami menyediakan pelayanan untuk menambah wawasan kamu tentang stunting loh!
-                    Melalui fitur chatbot ini, ayok! berbicaralah dengan Boni.</p>
+                <p align="justify">Halo, kami menyediakan pelayanan untuk menambah wawasan kamu tentang stunting loh!
+                    Melalui fitur chatbot ini, ayok! berbicaralah dengan Brody Chatbot.</p>
             </div>
             <div class="buttons">
-                <a href="{{ url_for('halchatbot') }}">Tanya Boni</a>
+                <a href="{{ url_for('halchatbot') }}">Tanya Brody</a>
             </div>
         </div>
     </div>
@@ -191,18 +195,18 @@
     <div class="container" id="contact">
         <div class="text-side" data-aos="fade-right">
             <div class="title">
-                <h1>SMATECH TEAM</h1>
+                <h1>WIRA WIRI TEAM</h1>
             </div>
             <div class="details">
-                <p align="justify">SMART TECHNOLOGY atau Team Smatech beranggotakan Irfan Triadi Saputra, Koandres, Laeli Nurafiah dan
-                    Mokhamad Akbar Wijaya</p>
+                <p align="justify"> Wira Wiri TEAM beranggotakan Muhammad Faqih Maulana, Dimas Nur Fauzi Antoro, Ikhlashul Amal dan
+                    Akhadiati Khaerul Syuhada</p>
             </div>
             <div class="buttons">
                 <a href="{{ url_for('tentang') }}">Tentang Kami</a>
             </div>
         </div>
         <div class="image-side" data-aos="fade-left">
-            <img src="/static/img/taem.png" alt="home-img">
+            <img src="/static/img/team-wara-wiri.jpg" alt="home-img">
         </div>
     </div>
     <!-- contact area end -->
@@ -216,8 +220,8 @@
 
     <!-- footer -->
     <footer>
-        <p>Created By Stunting APP | &copy;
-            2022 All rights reserved.</span>
+        <p>Created By House Stunting APP | &copy;
+            2023 All rights reserved.</span>
     </footer>
 
     <!-- aos cdn link -->

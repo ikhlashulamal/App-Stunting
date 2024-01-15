@@ -1,0 +1,6 @@
+package com.example.stunting
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
